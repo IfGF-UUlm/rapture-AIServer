@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>rapture-0.1</title>
+<meta name="rapture AI server" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="/static/w3.css">
+<link rel="stylesheet" href="/static/w3-theme-black.css">
+
+<body>
+    <header class="w3-container w3-theme w3-padding">
+        <div class="w3-center" onclick="location.href='../';">
+            <h4>AI server</h4>
+            <h1 class="w3-xxxlarge w3-animate-bottom">rapture 0.1</h1>
+        </div>
+    </header>
+    <div class="w3-center" style="padding:30px 20% 10px 20%;">
+        <form action="/process" method="post">
+            <div class="form-group">
+                <label>
+                    <strong>Enter Your Text:</strong>
+                </label>
+                <textarea name="input_text" cols="5" rows="10" required="true" style="width:100%">
+                    {{input_text}}
+                </textarea>
+            </div>
+            <div style="padding-top:10px;">
+                <button name="model_choice" class="w3-theme" type="submit" value="extractive_summary"
+                    title="Extracts important sentences from the input and returns them as a summary. Multilingual.">Extractive Summary</button>
+                <button name="model_choice" class="w3-theme" type="submit" value="abstractive_summary"
+                    title="Summarizes the input in one sentence.">Abstractive Summary</button>
+                <button name="model_choice" class="w3-theme" type="submit" value="paraphrase"
+                    title="Returns 5 possible paraphrases of the input.">Paraphrases</button>
+            </div>
+            <div style="padding-top:10px;">
+                <button name="model_choice" class="w3-theme" type="submit" value="citations"
+                    title="Returns 5 possible references that could be cited for the input.">Citations</button>
+                <button name="model_choice" class="w3-theme" type="submit" value="introduction"
+                    title="Returns a possible introduction to a research paper, using the input as context information.">Introduction</button>
+                <button name="model_choice" class="w3-theme" type="submit" value="conclusion"
+                    title="Returns a possible comclusion to a research paper, using the input as context information. It is recommended to use the entire mansucript as input.">Conclusion</button>
+                <button name="model_choice" class="w3-theme" type="submit" value="continuation"
+                    title="Returns a possible continuation to the input prompt for a research paper.">Continuation</button>
+            </div>
+        </form>
+        <div style="padding-top:30px;">
+            {% autoescape false %}
+            {{result}}
+            {% endautoescape %}
+        </div>
+    </div>
+</body>
+
+</html>
