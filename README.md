@@ -7,7 +7,7 @@ rapture-AIServer is a lightweight LAN server providing NLP services for scientis
 The server was designed to run on high-end retail hardware (e.g., 1 NVIDIA RTX A6000 GPU). It can do extractive and abstractive summarization, paraphrasing and academic writing. It is accessed via a browser.
 
 ## Install
-rapture-AIServer can only be installed on a Linux system and requires *conda* for package, dependency and environment management.
+rapture-AIServer can only be installed on a Linux system and requires *conda* for package, dependency and environment management. At least 40 GB of VRAM are required for running the server.
 For a quick installation, clone the repository and run the install-script
 
 `git clone https://github.com/IfGF-UUlm/rapture-AIServer.git`
